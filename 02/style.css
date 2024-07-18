@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  --cor1: hsl(217, 19%, 35%);
+  --cor2: hsl(214, 17%, 51%);
+  --cor3: hsl(212, 23%, 69%);
+  --cor4: hsl(210, 46%, 95%);
+
+  --fontManrope: "Manrope", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cor4);
+  font-family: var(--fontManrope);
+  font-weight: 600;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 700px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 20px rgb(0, 0, 0, 0.1);
+}
+
+.container .content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 20px;
+}
+
+.container .content h1,
+h4 {
+  font-size: 1.2rem;
+  color: var(--cor1);
+}
+
+.content p {
+  width: 380px;
+  font-size: 0.8rem;
+  color: var(--cor2);
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 340px;
+}
+
+.share .pfp-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.share .pfp-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.share .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.share .info p {
+  width: 100px;
+  font-size: 0.9rem;
+}
+
+.share .info h4 {
+  font-size: 1rem;
+}
+
+.shareBtn button {
+  border-radius: 50%;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.shareBtn img {
+  color: white;
+}
+
+.shareBtn button:hover {
+  background-color: var(--cor1);
+  color: white;
+  cursor: pointer;
+}
+
+.share-btn-container {
+  background-color: var(--cor1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+  border-radius: 10px;
+  width: 230px;
+  font-size: 0.8rem;
+  position: fixed;
+  top: 8.4rem;
+  left: 32.5rem;
+  color: var(--cor3);
+  animation: sharePop 1s ease;
+}
+
+.share-btn-container::after {
+  content: "";
+
+  width: 0;
+  height: 0;
+
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--cor1);
+
+  position: absolute;
+  bottom: -29px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.buttons a {
+  cursor: pointer;
+}
+
+.img img {
+  margin-top: 5px;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px 0 0 10px;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes sharePop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 34.5rem;
+  }
+
+  .container .content {
+    width: 360px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container .content p {
+    width: 300px;
+  }
+
+  .container .content .share {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .shareBtn {
+    margin-left: -110px;
+
+  }
+
+  .share-btn-container-mobile {
+    background-color: var(--cor1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 95px;
+    padding: 25px;
+    border-radius: 0 0 10px 10px;
+    width: 350px;
+    font-size: 0.8rem;
+    position: fixed;
+    top: 29.9rem;
+    color: var(--cor3);
+    animation: sharePop 1s ease;
+  }
+
+  .buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .shareBtnMobile button {
+    border-radius: 50%;
+    border: none;
+    padding: 8px;
+    background-color: var(--cor3);
+    cursor: pointer;
+  }
+
+  .img img {
+    width: 350px;
+    margin-top: -60px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .hide {
+    display: none;
+  }
+}
